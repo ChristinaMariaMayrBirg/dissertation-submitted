@@ -1,0 +1,30 @@
+
+
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{shapes,arrows,chains}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[xlabel=Simulation time in s,ylabel=Number of route recommendations, title=Detail view (first 25s only)]
+\addplot+ [no marks,const plot mark left] table [x=Time,y=Number] {
+Time Number
+0.0  0
+10.4 1
+12.4 2
+14.4 3
+16.4 4
+18.4 5
+20.4 6
+22.4 7
+24.4 8
+};
+\end{axis}
+\draw[decorate,decoration={brace,amplitude=5pt},yshift=0pt,yshift=0pt]
+(0.6,1.2) -- (3.0,1.2)  node [black,midway,yshift=0.8cm, text width=3cm] {Guidance system: not active};
+\end{tikzpicture}
+\end{document}

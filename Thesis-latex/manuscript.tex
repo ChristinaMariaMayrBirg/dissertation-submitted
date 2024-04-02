@@ -1,0 +1,342 @@
+\listfiles
+
+\documentclass[
+							a4paper, 
+							11pt, 
+							openany, 
+							bibtotoc, 
+							%liststotoc,
+							parskip=half, 
+   							headings=normal,
+   							bibliography=totoc
+						]{scrreprt}
+
+% all needed packages %
+%packages%
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\usepackage[section]{placeins}
+\usepackage[english]{babel}
+\usepackage[backend=bibtex,sorting=none,citestyle=numeric-comp]{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{nomencl}
+\usepackage{hyphsubst}
+\usepackage{lastpage}
+%\usepackage{caption}
+\usepackage{float}
+\usepackage{floatflt}
+\usepackage[hang,nooneline]{caption}
+\usepackage[hang,nooneline]{subfigure}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{rotating}
+%\usepackage[T1]{fontenc}
+%\usepackage[bookmarks=true,colorlinks=true,pagecolor=black,linktocpage=true]{hyperref}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{setspace}
+\usepackage{geometry}
+%\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{float}
+\usepackage{pspicture}
+%\usepackage[dvips,final]{graphicx}
+\usepackage{pdfpages}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage[]{appendix}
+% 
+
+\definecolor{blue}{rgb}{0.188, 0.439, 0.701}
+
+
+
+\usepackage[
+    bookmarks,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=blue, 
+    anchorcolor=black,
+    citecolor=blue, 
+    filecolor=magenta,
+    menucolor=blue, 
+    urlcolor=cyan, 
+    %backref,
+    plainpages=false, 
+    pdfpagelabels,
+    hypertexnames=false, 
+    linktocpage 
+]{hyperref}
+%\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{float}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{shapes,arrows,chains}
+\usepackage{rotating}
+%\usepackage{hyperref}
+\usepackage{todonotes}
+\singlespacing
+%\usepackage{biblatex}
+
+% all needed commands %
+
+%Meta-Informationen%
+
+\newcommand{\myfakultaet}{Mathematik und Informatik}
+\newcommand{\myauthor}{Christina Maria Mayr}
+\newcommand{\myvname}{Christina}
+\newcommand{\myname}{Mayr}
+\newcommand{\mypublisher}{Christina Maria Mayr}
+\newcommand{\myjahr}{201x}
+\newcommand{\mylogo}{./hm_logo_alt}
+\newcommand{\mydate}{21.10.2015}
+
+\addto\captionsngerman{%
+\renewcommand{\figurename}{Abb.}%
+\renewcommand{\tablename}{Tab.}%
+}
+\graphicspath{{figures/}}
+\hypersetup{pdfauthor={Christina Mayr}}
+\hypersetup{pdftitle={Dissertation thesis Mayr}}
+ \setkomafont{sectioning}{\normalcolor\bfseries}
+%\tikzstyle{every node}=[circle, draw, fill=black!50, inner sep=0pt, minimum width=4pt]
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{acronym}
+\usepackage{csquotes}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\defbibfilter{artic}{
+  type=article
+  or
+  type=inbook
+  or
+  type=incollection
+  or
+  type=conference
+  or
+  type=inproceedings
+}
+
+\defbibfilter{other}{
+  not type=article
+  and
+  not type=inbook
+  and
+  not type=incollection
+  and
+  not type=conference
+  and
+  not type=inproceedings
+  and
+  not type=book
+  and
+  not type=thesis
+}
+
+
+
+\addbibresource{./bibliography/Communication,./bibliography/MathematicalMethods,./bibliography/CollectiveDynamics,./bibliography/ComputerScience,./bibliography/LifeSciences}
+
+\begin{document}
+
+
+% headline and footline %
+\input{./formats/headfoot}
+
+% title page%
+\input{./formats/titlepage}
+
+
+
+
+
+\pagenumbering{roman}
+
+%\pagestyle{plain}
+\pagestyle{empty}
+
+
+{\color{white} white page for print only}
+
+\newpage
+
+
+%\begin{abstract}
+\section*{\centering Abstract}
+In the last decade, pedestrian dynamics research has created a knowledge base on crowd behavior. Increasing focus is now being put on effectively managing crowds to ensure safety and well-being. Previous approaches to crowd management were often based on human intervention, but this is error-prone and only possible where personnel is available. In addition, the infrastructure for efficient information distribution often needs to be set up.
+One approach is to guide a crowd via their smartphones. 
+
+Direct communication technologies make it possible to exchange data between devices even without a cellular network infrastructure. At a major event, information could still be provided to the crowd even if the network breaks down. The technology is already used in vehicle communication and could open up new possibilities for crowd management as soon as it is available for smartphones. 
+
+
+In this thesis, I investigate how crowds can be managed using direct communication technology. I propose a novel system that I build and investigate step by step. In simulation studies, the suitability of direct communication for redirecting crowds is investigated, and the performance of crowd redirection algorithms that automatically generate guidance messages based on environmental data is compared. With an online survey, I assess how the willingness to follow redirection instructions can be fostered. I then combine the results of the investigations into an overall concept and test it for a real-life case, again by running simulations. It is demonstrated that the proposed system is capable of resolving safety-critical congestion.
+
+The work contributes a new approach to the research field of crowd management. It shows that crowds can indeed be managed using mobile applications based on direct communication technology. Moreover, the work enhances the understanding of how such a system can be systematically studied and designed. Another important contribution of this work is the scientific and open-source simulation framework \textit{CrowNet} created for the simulation studies.
+
+\newpage
+
+
+{\color{white} white page for print only}
+
+\newpage
+
+
+\section*{\centering Kurzfassung}
+
+
+In der Personenstromforschung wurde im letzten Jahrzehnt eine Wissensbasis zum Verhalten von Menschenmengen geschaffen. Der Fokus rückt nun zunehmend auf das effektiven Managen von Menschenansammlungen, um Sicherheit und Wohlbefinden zu gewährleisten. Bisher basieren Ansätze zur Personenstromleitung darauf, dass Personal aktiv eingreift, was jedoch fehleranfällig ist und nur dort möglich ist, wo Personal zur Verfügung steht. Zudem ist nicht immer eine Infrastruktur für eine effiziente Informationsverteilung vorhanden.
+Ein Lösungsansatz ist Informationen über Smarthphones bereitzustellen.
+
+Direkte Kommunikationstechnologien ermöglichen den Austausch von Daten zwischen Geräten auch ohne Netzinfrastruktur. Bei einer Großveranstaltung könnten damit auch bei einem Ausfall des Netzes noch sicherheitsrelevante Informationen bereitgestellt werden. Direkte Kommunikation wird bereits in der Fahrzeugkommunikation eingesetzt und könnte, sobald diese auch für Smartphones verfügbar ist, neue Möglichkeiten zur Personenstromleitung eröffnen. 
+
+In dieser Arbeit untersuche ich, wie Menschenmengen mithilfe von direkter Kommunikationstechnologie geleitet werden können. Ich schlage ein neuartiges System vor, das ich schrittweise aufbaue und untersuche. In Simulationsstudien teste ich die Eignung von direkter Kommunikation zur Umleitung von Menschenmengen und vergleiche die Performance von Algorithmen, die Routenempfehlungen automatisiert, basierend auf Umgebungsinformationen, generieren. Mithilfe einer Umfrage untersuche ich, wie die Bereitschaft, Umleitempfehlungen zu folgen, erhöht werden kann. Die Ergebnisse aus den Untersuchungen führe ich in ein Gesamtkonzept zusammen und teste dies mithilfe von Simulationen für einen realen Anwendungsfall. Ich demonstriere, dass das von mir vorgeschlagene System in der Lage ist, sicherheitskritische Stausituationen zu vermeiden.
+
+Die Arbeit ergänzt das Forschungsfeld Crowd Management um einen neuen Ansatz. Die Ergebnisse zeigen, dass es möglich ist, Personenströme mithilfe direkter Kommunikationstechnologie zu leiten. Die Arbeit trägt zum Verständnis bei, wie ein auf direkter Kommunikationstechnologie basierendes System zur Umleitung von Personenströmen systematisch aufgebaut und untersucht werden kann. Ein weiterer wichtiger Beitrag dieser Arbeit ist die, für die Untersuchung geschaffene, wissenschaftliche und quelloffene Software \textit{CrowNet}.
+
+
+\newpage
+
+{\color{white} white page for print only}
+
+\newpage
+
+
+
+
+
+
+%\textbf{Themenfelder}: Informatik, Modellierung, Personenströme, Informationsbereitstellung, Sicherheit; 
+%\textbf{Mit}: xx Abbildungen, xx Tabellen, xx Quellen
+ 
+
+ 
+%\end{abstract}
+
+
+
+%\setcounter{page}{0}
+
+
+\newgeometry{top=3.2cm}
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\restoregeometry
+
+
+
+%\listoffigures
+%\listoftables
+%\lstlistoflistings
+%\clearpage
+
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+
+
+
+\newpage
+
+{\color{white} white page for print only}
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+%\bibliographystyle{natdin}
+%\bibliographystyle{unsrt}
+
+%\nocite{*}
+
+\input{./formats/headfoot}
+
+
+
+\input{./content/chapter-1-introduction}
+\input{./content/chapter-2-state-of-the-art}
+\input{./content/chapter-3-crownet}
+\input{./content/chapter-4-investigation}
+\input{./content/chapter-5-summary}
+
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\fancyhead[C]{\textsf{  \nouppercase{\leftmark} }}
+
+
+
+
+\printbibheading
+
+
+The bibliography contains 311 references. It is divided into four parts:
+
+\begin{itemize}
+\item Articles (total number: 221)
+\item Books (total number: 28)
+\item Theses (total number: 19)
+\item Other sources (total number: 43)
+\end{itemize}
+
+
+The references are sorted according to their position in the text. It is therefore possible that the number within a part is not consecutive.
+
+
+\printbibliography[heading=subbibliography,title={Articles},filter=artic]
+\printbibliography[heading=subbibliography,title={Books},type=book]
+\printbibliography[heading=subbibliography,title={Theses},type=thesis]
+\printbibliography[heading=subbibliography,title={Other sources},filter=other]
+
+
+\clearpage
+
+
+
+\begin{appendices}
+
+\input{./content/appendix}
+
+\end{appendices}
+
+
+\end{document}

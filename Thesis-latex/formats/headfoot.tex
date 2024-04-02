@@ -1,0 +1,36 @@
+%Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+ 
+%Kopfzeile mittig mit Kaptilname
+%\fancyhead[C]{\textsf{\nouppercase{\leftmark}}}
+
+\fancyhead[C]{\textsf{ {\thechapter} \nouppercase{\leftmark} }}
+
+
+%\fancyhead[R]{ \includegraphics[height=1.2cm]{./pictures/hm_logo_alt} } %\input{./pictures/image.pdf_tex}  }
+%Linie oben
+%\renewcommand{\headrulewidth}{0.5pt}
+%Fußzeile links bzw. innen
+	%\fancyfoot[L]{Christina Maria Mayr}
+	\fancyfoot[C]{\thepage}
+%Linie unten
+%\renewcommand{\footrulewidth}{0.5pt}
+ 
+% Fußzeile auf jeder Seite - auch Kapitel und Inhaltsverzeichnis
+\fancypagestyle{plain}{%
+   \fancyhf{}%
+	%\fancyfoot[L]{Christina Maria Mayr}
+	\fancyfoot[C]{\thepage}
+   \renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+}
+
+
+
+
+\addtolength{\headheight}{\baselineskip}
+\addtolength{\headheight}{0.61pt}
+\addtolength{\footskip}{10pt}
+\renewcommand{\headrulewidth}{0pt}% Trennlinie
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}

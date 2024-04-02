@@ -1,0 +1,6 @@
+Effect of controller: max densitiy (41 samples, 41 compliance rates) not normally distributed, if p < 0.05 
+normality check: Controller Fixed order strategy: KstestResult(statistic=0.9852887074476058, pvalue=1.4952510289111597e-75). 
+normality check: Controller Minimal density strategy: KstestResult(statistic=0.9858316273512362, pvalue=3.199991338963379e-76). 
+normality check: Controller Simple density strategy: KstestResult(statistic=0.9847279858135858, pvalue=6.930731379287008e-75). 
+Kruskal Wallis test: densities. no difference between groups, if  p > 0.05.
+KruskalResult(statistic=1.0104037994691937, pvalue=0.6033837401112071)

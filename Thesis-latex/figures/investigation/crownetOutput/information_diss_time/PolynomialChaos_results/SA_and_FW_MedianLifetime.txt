@@ -1,0 +1,13 @@
+Parameters: Number of peds, repeat Interval, power 
+Quantity of interest: MedianLifetime 
+Qoi (stats):  E = 5.046, std = 0.545, skew = -1.18
+
+Sensitivity indices 
+First order 
+[0.001 0.999 0.   ]
+ Second order 
+[[ 0.  0. -0.]
+ [ 0.  0. -0.]
+ [-0. -0.  0.]]
+ Total order 
+[0.001 0.999 0.   ]

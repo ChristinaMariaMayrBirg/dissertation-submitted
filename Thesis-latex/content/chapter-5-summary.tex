@@ -1,0 +1,66 @@
+
+
+\chapter{Summary, future directions, and conclusion}
+
+In this chapter, I provide a summary of the thesis (Section~\ref{sec:summary}), with a short review of each of the three main chapters. Section~\ref{sec:future} contains future research directions. Section~\ref{sec:conclusion} concludes the thesis.
+
+
+\section{Summary}
+\label{sec:summary}
+
+The goal of this work was to develop a crowd guidance system to redirect crowds through mobile applications based on direct communication technology. I asked how such a system can be designed, made a proposal, and investigated it using modeling and simulation. 
+%
+I started with analyzing the state of the art. I presented theories on crowd behavior and concluded that people share social identities that often dominate their behavior, which should be harnessed when redirecting crowds. 
+My review of crowd-sensing procedures showed that while various procedures are available, none provide suitable crowd density data based on direct communication technology. Therefore, new procedures were needed. I also looked at algorithms that compute signals to guide crowds based on the current traffic situation. Algorithms were either customized to particular scenarios and, thus, not transferable or were tested under the assumption that people always comply with instructions, which is wrong. From this, I concluded that transferable algorithms were needed which should be tested for an unknown compliance.
+
+Then, I presented models and simulators that can be employed to simulate direct communication in mobile networks based on the IEEE standards 802.11p/bd and the LTE and 5G standards of the 3rd Generation Partnership Project. Next, I looked at model and simulator coupling to build a crowd guidance model from the previously presented component models. Although there are suitable middlewares and interfaces, no simulation framework was found. I concluded that a new simulation framework had to be developed for my investigations.
+%
+For this purpose, I created the simulation framework \textit{CrowNet}. It was developed in collaboration with scientists from the field of mobile communication to cover the communication aspects. I developed the crucial software modules that enable the simulation of a crowd guidance system on my own; other modules were developed in collaboration, and some modules I only used. I followed software engineering principles and defined scope, requirements, and quality measures. Then, the individual modules were developed. The \textit{crownetutils} module was created to enable the coupling of models and simulators using an explicit update scheme. The \textit{SUQ-controller} module was introduced to conduct parameter studies of coupled simulation in parallel. The \mbox{\textit{OMNeT++}} module was introduced to provide mobile applications for crowd sensing and disseminating route recommendations based on direct communication technology. The \textit{Vadere} crowd simulation module was integrated to provide models for the crowd behavior with the \textit{flowcontrol} module as route recommendation provider. All modules are extensions of existing frameworks except for the novel framework \textit{flowcontrol} that I created in this work. 
+
+
+In the last step, I used the newly created framework \textit{CrowNet} to answer the main research question of how crowds can be redirected using direct communication technologies. Firstly, I assessed how reliably information is disseminated in a moving crowd. I analyzed how shadowing affects information dissemination, and I found that the information is disseminated within seconds when the crowd is sufficiently dense and well-distributed. Secondly, I compared route recommendation algorithms when the number of pedestrians complying with recommendations is uncertain. I found that algorithms that base recommendations on crowd density differences can compensate low compliance rates well. I suggested that the density-based algorithm that required the fewest redirection measure should be employed in a crowd guidance system. Since compliance depends on how information is presented, I developed message designs and tested them in an online survey with more than 1400 participants to find out which design is most convincing so that people follow a route recommendation. The statistical analyses showed that there is no ideal message design that fits all scenarios. However, real-time congestion information fosters compliance. I also found evidence that social identities affect route choice: Messages that appealed to the team spirit affected football fans' route choice but had no effect on the control group. Finally, I answered my research question by synthesizing the findings from the previous studies. I suggested a crowd guidance system in which the route recommendations computed by a density-based algorithm are disseminated in the crowd using LTE sidelink communication. Densities are also measured using a second sidelink-based mobile application. The concept was applied to a real-life use case at the metro station Münchner Freiheit (Munich, Germany) and tested in a simulation study. The results demonstrated that the system can improve pedestrian traffic by resolving congestion.
+
+
+
+
+
+
+\section{Future directions}
+\label{sec:future}
+
+
+One possible direction for future research is the optimization of the distribution of pedestrians. In this thesis, I used heuristic route recommendation algorithms. I proved that, despite their simplicity, they are able to prevent and resolve congestion. However, they cannot guarantee that people are optimally distributed over space, and thus, optimally prevent congestion.
+The novel simulation framework \textit{flowcontrol} offers a flexible software structure which enables researches to implement and test algorithms for the optimization of the system. Promising candidates may be methods based on model predictive control, state-space control or Koopman control given a suitable surrogate. Strategies must be found to deal with the uncontrollability of the crowd and the partial observability.
+
+I further suggest investigating the scalability of the system for large-scale scenarios with many crowd members. The results have shown that information about LTE sidelink can be disseminated very quickly in the crowd. Density data was disseminated in approximately the time it takes a person to take a step. However, despite the small crowd size, the packet loss was high. It is unclear how the accuracy of the density estimates evolves when the number of pedestrians increases, and thus, the packet loss. Therefore, further investigations are necessary.
+
+It may also be beneficial to accelerate the simulation to make parameter studies feasible: There are several uncertain parameters whose influence should be analyzed. This is currently not possible because a simulation run takes several hours. To accelerate the simulation, surrogate models  could be employed that replace the extensive mobile communication simulation. The challenge is to find a surrogate capturing the influence of the technology used for direct communication and topographical features.
+%Die Ergebnisse meiner Studien deuten darauf hin, dass das Vorgehen dabei maßgeblich von der Netzwerktechnologie und Szenariobedingungen abhängt: LTE sidelink communication provided information almost immediately, whereas the information provision through WLAN-based technology was delayed and depended on the position of pedestrians.
+
+Future research could also study the mobile communication system in the autonomous mode, that is, without resources managed by a base station. Then emergencies with a network infrastructure failure could be handled.
+
+The results of this work are a strong encouragement to implement a crowd guidance system in practice. The simulation model should be validated against empirical data as soon as such a system becomes available.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+Previous crowd management approaches have focused either on technological processes, such as crowd detection, or psychological aspects, such as communication with the crowd. 
+In this work,  a complex socio-technical system that combines technology and psychology was proposed and tested for the first time: The crowd is automatically detected and informed using mobile applications while considering the crowd's psychological behavior. 
+The work thus contributes considerably to understanding how complex automated guidance systems for crowds can be built. 
+For the investigations, the \textit{CrowNet} simulator was created, which is a free and open software tool for future research.
+
+
+
+The most important finding of this work is that it is indeed possible to redirect crowds using mobile applications based on direct communication technologies. This was demonstrated for a real-life use case in a simulation study under realistic conditions.
+The proposed system resolved safety-critical jams even when only a part of the crowd was using the technology. 
+This strongly encourages building a real system, making crowd management accessible for places or happenings without infrastructure for conventional crowd management. 
+
+
+
+
+
+
+
+

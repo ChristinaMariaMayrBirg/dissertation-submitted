@@ -1,0 +1,13 @@
+Parameters: Number of peds, repeat Interval, power 
+Quantity of interest: Time95PercentInformedAll 
+Qoi (stats):  E = 5.028, std = 1.158, skew = -0.557
+
+Sensitivity indices 
+First order 
+[0.101 0.878 0.   ]
+ Second order 
+[[ 0.     0.021 -0.   ]
+ [ 0.021  0.     0.   ]
+ [-0.     0.     0.   ]]
+ Total order 
+[ 0.122  0.899 -0.   ]

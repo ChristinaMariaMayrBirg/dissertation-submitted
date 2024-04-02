@@ -1,0 +1,13 @@
+Parameters: Number of peds, repeat Interval, power 
+Quantity of interest: MinLifetime 
+Qoi (stats):  E = 4.973, std = 0.701, skew = -0.211
+
+Sensitivity indices 
+First order 
+[0.252 0.743 0.   ]
+ Second order 
+[[ 0.     0.005 -0.   ]
+ [ 0.005  0.     0.   ]
+ [-0.     0.     0.   ]]
+ Total order 
+[0.257 0.748 0.   ]
