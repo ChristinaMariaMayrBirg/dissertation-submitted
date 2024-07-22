@@ -49,7 +49,7 @@ In the `steer' stage physical measures, like for example placing a barrier, are 
 \subsection{Quantitative characteristics of crowds and safety evaluation }
 \label{sec:fundamentaldiagram}
  
-Crowd and pedestrian behavior can be quantified and evaluated using several measurement quantities and metrics. One of them is the fundamental diagram that describes the relationship between density and flow~\cite{adrian-2019-cdyn}, see Fig.~\ref{fig:fundamental}. The flow increases over the density until the critical density is reached, at which the flow is maximal, that is, the capacity. Beyond the critical density, the flow decreases until the jamming density is reached, and movement is no longer.
+Crowd and pedestrian behavior can be quantified and evaluated using several measurement quantities and metrics. One of them is the fundamental diagram that describes the relationship between density and flow~\cite{adrian-2019-cdyn}, see Fig.~\ref{fig:fundamental}. The flow increases over the density until the critical density is reached, at which the flow is maximal, that is, the capacity. Beyond the critical density, the flow decreases until the jamming density is reached, and movement is no longer possible.
 The density range between $0\,\text{ped/m}^2$ and the critical density is called the free flow regime because there is enough space to allow most pedestrians to walk at their desired speeds~\cite{feliciani-2021-cdyn}. According to the Handbook of Fire Protection Engineering (SFPE)~\cite{hurley-2016-cdyn}, the free flow regime corresponds to a density range $[0\,\text{ped/m}^2, 1.88\,\text{ped/m}^2]$. 
 
 
@@ -695,7 +695,7 @@ Templeton et al.~\cite{templeton-2023-cdyn} distinguishes four principle modelin
 
 \begin{itemize}
 \item Field of influence: Agents have a bounded field of influence around them, which transmits information to other agents. See e.g. \cite{bernardini-2014-cdyn}.
-\item Network-based: Agents share information with others within their social network. See e.g. \cite{yang-2019-cdyn} .
+\item Network-based: Agents share information with others within their social network. See e.g. \cite{yang-2019-cdyn}.
 \item Information trails: Agents disseminate information via trails in the environment as they move. See e.g.~\cite{zheng-2019-cdyn}.
 \item External information: Agents in particular areas become informed by an external source. See e.g. \cite{rigos-2019-cdyn}.
 \end{itemize} 
@@ -784,7 +784,7 @@ At the medium access control (MAC) layer, the standard specifies the Enhanced Di
 Therefore, participants access the channel in a self-organized, decentralized way. However, this requires that devices recognize the channel occupation correctly and do not start accessing the channel simultaneously. Therefore, the performance depends on the density of participants. The more participants, the more likely are collisions and interference that lead to packet loss~\cite{shrestha-2020-com}. It cannot be guaranteed that packets arrive within a certain time~\cite{shrestha-2020-com}.
 
 As the 802.11p standard only applies to the physical and medium access control layer, the standard is combined with other standards to enable Dedicated Short Range Communication. In the context of Intelligent Traffic Systems (ITS), there are the IEEE 1609 standard~\cite{ieee-2016-IEEEStd1609.4-com} (USA), the CEN/ETSI EN302 663 standard~\cite{etsi-2019-EN302663-com} (Europe) and the ARIB STD-T109 standard~\cite{its-2012-T109-com} (Japan). An overview of the country-specific specifications can be found in~\cite{costandoiu-2019-com}.
-The transmission is intended to operate in the frequency range 5855\,MHz to 5925\,MHz which is unlicensed in Europe and in the USA. 
+The transmission is intended to operate in the frequency range 5855\,MHz to 5925\,MHz. 
 
 The \textit{IEEE 802.11bd} standard~\cite{ieee802.11bd-2022-com} is an amendment of the set of 802.11 standards. It was released in 2023, and it is interoperable with the 802.11p technology. The amendment aims to improve throughput, latency, reliability, and range through new specifications for the physical layer and the medium access layer~\cite{yacheur-2020-com}.  Therefore, 802.11bd-based technology is more advanced than \textit{IEEE 802.11p} technology. The bandwidth of the channel is $20\,MHz$ which is twice the bandwidth of the IEEE 802.11p standard. Like the IEEE 802.11p, the amendment specifies the EDCA method for accessing the channel. Due to the larger bandwidth and adjustments regarding the error correction scheme, more packets can be transmitted~\cite{yacheur-2020-com}. 
 Although the 802.11bd amendment has improved network performance compared to the 802.11p standard, 802.11bd-based technology can often not outperform Cellular Vehicle-to-everything communication, as demonstrated in~\cite{anwar-2019-com}.
@@ -803,7 +803,7 @@ Cellular Vehicle-to-everything communication (C-V2X) has been developed by the T
 
 \textit{LTE V2X}, that is Vehicle-to-everything communication over Long Term Evolution networks, is specified in the technical reports TR 22.885~\cite{3gpp-22.885-2015-com} and TR 36.885~\cite{3gpp-36.885-2016-com} as well as in the technical specifications TS 22.185~\cite{3gpp-22.185-2020-com}, TS 23.285~\cite{3gpp-23.285-2020-com}, TS 36.213~\cite{3gpp-36.213-2020-com}, TS 36.321~\cite{3gpp-36.321-2020-com} released by the 3GPP. Direct communication is specified over the PC5 interface using so-called sidelinks. The sidelink uses the same band for communication as the Dedicated Short Range Communication: $5.9\,\text{GHz}$.
 Two communication modes exist: the controlled mode (mode 3) and the autonomous mode (mode 4), see Fig.~\ref{fig:scenariosmodes}. In mode 3, a base station allocates resources. In this mode it is not specified whether dynamic or semi-persistent scheduling is employed~\cite{bazzi-2021-com}. 
-For the autonomous mode a semi-persistent scheduling procedure is required: each network participant allocates frames and sub-channels at a fixed time interval based on an channel occupancy estimates~\cite{bazzi-2021-com}. 
+For the autonomous mode a semi-persistent scheduling procedure is required: each network participant allocates frames and sub-channels at a fixed time interval based on channel occupancy estimates~\cite{bazzi-2021-com}. 
 
 
 
